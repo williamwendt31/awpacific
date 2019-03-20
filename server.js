@@ -18,6 +18,6 @@ app.use('/shopping-cart', cart);
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'client/build')));
+app.use(express.static(__dirname + '/public/dist/public'));
 
 app.listen(API_PORT, () => console.log(`Listening on port: ${API_PORT}`));

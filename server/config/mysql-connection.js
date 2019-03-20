@@ -7,13 +7,4 @@ const pool = mysql.createPool({
     database: 'awpacific'
 });
 
-pool.query('SELECT * FROM users;', (error, results, fields) => {
-    if (error) {
-        throw error;
-    }
-
-    console.log('The result is: ', results);
-    console.log('The fields are: ', fields);
-});
-
 module.exports = pool;
