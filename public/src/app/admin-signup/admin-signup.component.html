@@ -1,0 +1,29 @@
+<div class="login-wrapper">
+  <form class="login" (submit)="onSignUp()" #signUpForm="ngForm">
+    <section class="title">
+      <h3 class="welcome">Welcome to</h3>
+      AW Pacific Trading Co.
+      <h5 class="hint">Better Product, Better Prices!</h5>
+    </section>
+    <div class="login-group">
+      <clr-input-container>
+        <input clrInput type="email" name="signup.email" placeholder="E-mail" [(ngModel)]="signup.email" required minlength="4" ngModel email="true" /> 
+      </clr-input-container>
+      <clr-password-container>
+        <input clrPassword type="password" name="signup.password" placeholder="Password" [(ngModel)]="signup.password" required minlength="8" /> 
+      </clr-password-container>
+      <clr-password-container>
+        <input clrPassword type="password" name="signup.passwordConf" placeholder="Password Confirmation" [(ngModel)]="signup.passwordConf" required minlength="8" /> 
+      </clr-password-container>
+      <clr-checkbox-wrapper>
+        <label>Remember me</label>
+        <input clrCheckbox type="checkbox" name="signup.remember" [(ngModel)]="signup.remember" />
+      </clr-checkbox-wrapper>
+      <div *ngIf="signup.error" class="error active">
+        Invalid Credentials
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!signUpForm.form.valid">Sign Up</button>
+      <a [routerLink]="['/login']" class="signup">Back to Login</a>
+    </div>
+  </form>
+</div>

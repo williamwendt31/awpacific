@@ -1,0 +1,9 @@
+.login-wrapper {
+  background-image: url(../../assets/images/wallpaper.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right center;
+}
+.login-wrapper .login {
+  min-height: 100vh;
+}
